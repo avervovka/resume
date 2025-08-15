@@ -169,6 +169,28 @@
       }
     });
   });
+(function(){
+  var lastScroll = 0;
+  var header = document.querySelector('header');
+  if (!header) return;
+  var mobile = window.matchMedia("(max-width: 900px)").matches;
+  window.addEventListener('resize', function() {
+    mobile = window.matchMedia("(max-width: 900px)").matches;
+    if (!mobile) header.style.top = '0';
+  });
+  window.addEventListener('scroll', function() {
+    if (!mobile) return;
+    var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    if (currentScroll > lastScroll && currentScroll > header.offsetHeight) {
+      // Скроллим вниз — скрыть
+      header.style.top = '-' + header.offsetHeight + 'px';
+    } else {
+      // Скроллим вверх — показать
+      header.style.top = '0';
+    }
+    lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+  });
+})();
 </script>
 </body>
 </html>

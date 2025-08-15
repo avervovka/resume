@@ -400,5 +400,9 @@ a:hover {
     margin-bottom: 4px !important;
   }
 }
-
+@media (max-width: 900px) {
+  header {
+    transition: top 0.3s cubic-bezier(.4,1.7,.6,1), background 0.15s;
+  }
+}
 }
