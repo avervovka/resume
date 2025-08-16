@@ -376,8 +376,8 @@ a:hover {
   header nav a {
     flex: 0 1 auto;
     white-space: normal;
-    font-size: 0.375em; /* размер шрифта уменьшен в 2 раза */
-    padding: 2px 3px; /* padding уменьшен в 2 раза */
+    font-size: 0.7em; /* размер шрифта уменьшен в 2 раза */
+    padding: 3px 4px; /* padding уменьшен в 2 раза */
     box-sizing: border-box;
     text-align: center;
   }
@@ -387,13 +387,13 @@ a:hover {
     margin-bottom: 4px !important;
   }
   .subtitle {
-    font-size: 0.5em !important; /* подзаголовок уменьшен в 2 раза */
+    font-size: 1.0em !important; /* подзаголовок уменьшен в 2 раза */
     margin-bottom: 8px !important;
   }
 }
 @media (max-width: 900px) {
   main {
-    padding-top: 50px !important; /* уменьшено с 80px */
+    padding-top: 100px !important; /* уменьшено с 80px */
   }
   body h1 {
     margin-top: 0 !important;
