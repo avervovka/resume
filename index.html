@@ -76,6 +76,7 @@
     <h2>References</h2>
     <div class="reference-item">Dan Piatrou, Ruby on Rails Developer, +48 789 801 365</div>
     <div class="reference-item">Aliaksandr Sabol&rsquo;ka, QA Lead / Automation Engineer, +375 29 738 78 74</div>
+    <div class="reference-item">Vladimir Khal&rsquo;zov, Ruby on Rails Senior Developer, +375 33 344 14 32</div>
   </section>
   <section class="experience-section" id="experience">
     <h2>Professional Experience</h2>
@@ -194,6 +195,34 @@
     lastScroll = currentScroll <= 0 ? 0 : currentScroll;
   });
 })();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector("header");
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener("scroll", () => {
+    // Убираем проверку window.innerWidth, теперь для всех устройств
+    if (window.scrollY > lastScrollY) {
+      header.style.transform = "translate(-50%, -100%)"; // уезжает вверх
+      header.style.opacity = "0";                        // исчезает
+    } else {
+      header.style.transform = "translate(-50%, 0)";    // возвращается
+      header.style.opacity = "1";                        // появляется
+    }
+    lastScrollY = window.scrollY;
+  });
+
+  // Клики по блокам — скролл к верху блока
+  document.querySelectorAll("section").forEach(sec => {
+    sec.style.cursor = "pointer";
+    sec.addEventListener("click", e => {
+      if (e.target.tagName.toLowerCase() === "a") return;
+      sec.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+});
+</script>
 </script>
 </body>
 </html>
