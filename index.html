@@ -200,25 +200,40 @@
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector("header");
   let lastScrollY = window.scrollY;
+  let disableShowOnScrollUp = false; // блокировка показа шапки сразу после клика
 
   window.addEventListener("scroll", () => {
-    // Убираем проверку window.innerWidth, теперь для всех устройств
-    if (window.scrollY > lastScrollY) {
-      header.style.transform = "translate(-50%, -100%)"; // уезжает вверх
-      header.style.opacity = "0";                        // исчезает
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY) {
+      // Scroll down — скрываем шапку 
+      header.style.transform = "translate(-50%, -100%)";
+      header.style.opacity = "0";
+      disableShowOnScrollUp = false; // готовы показывать при следующем скролле вверх
     } else {
-      header.style.transform = "translate(-50%, 0)";    // возвращается
-      header.style.opacity = "1";                        // появляется
+      // Scroll up — показываем шапку, только если блокировка не установлена
+      if (!disableShowOnScrollUp) {
+        header.style.transform = "translate(-50%, 0)";
+        header.style.opacity = "1";
+      }
     }
-    lastScrollY = window.scrollY;
+
+    lastScrollY = currentScrollY;
   });
 
-  // Клики по блокам — скролл к верху блока
   document.querySelectorAll("section").forEach(sec => {
     sec.style.cursor = "pointer";
     sec.addEventListener("click", e => {
       if (e.target.tagName.toLowerCase() === "a") return;
+
+      // При клике скроллим плавно к верху блока
       sec.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      // Деактивируем показ шапки при скролле вверх после клика (на 800 мс)
+      disableShowOnScrollUp = true;
+      setTimeout(() => {
+        disableShowOnScrollUp = false;
+      }, 800);
     });
   });
 });
