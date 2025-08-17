@@ -290,8 +290,8 @@ a:hover { color: #a162f7; }
   header {
     position: fixed;
     top: 0;
-    left: 0 !important;
-    transform: none !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
     width: 100vw !important;
     padding: 8px 10px !important;
     box-sizing: border-box;
