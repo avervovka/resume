@@ -357,3 +357,13 @@ a:hover { color: #a162f7; }
     font-size: 0.9em !important;
   }
 }
+
+@supports (-webkit-touch-callout: none) and (not (object-fit: fill)) {
+  header {
+    position: sticky !important;
+    top: 0 !important;
+    transform: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+  }
+}
