@@ -11,20 +11,16 @@ const translations = {
     nav_references: "References",
     nav_experience: "Experience",
     nav_certificates: "Certificates",
-
     title: "Uladzimir Zadarozhny",
     subtitle: "Senior Manual & Automation QA / QC Engineer",
-
     email_label: "Email:",
     phone_label: "Phone:",
     viber: "Viber",
     telegram: "Telegram",
     linkedin_label: "LinkedIn:",
-
     professional_summary_heading: "Professional Summary",
-    professional_summary_text: 
+    professional_summary_text:
       "Dedicated and innovative <strong>Senior QA Engineer</strong> with 6+ years of expertise in both hardware and software testing, across Web, IoT, and consumer electronics. Skilled at designing bulletproof test strategies, driving process improvements, and collaborating with global teams to ensure outstanding product quality.",
-
     core_competencies_heading: "Core Competencies",
     testing_item: "Testing: Manual, Functional, Regression & Non-Functional",
     integration_item: "Integration: Hardware-Software Integration",
@@ -35,19 +31,15 @@ const translations = {
     databases_item: "Databases: MySQL, DBeaver, Postico",
     os_item: "Operating Systems: Linux, macOS, Windows",
     other_item: "Other: Git, Bash, CI/CD",
-
     education_heading: "Education",
     education_bsc: "B.Sc. Electrical Engineering — Belarusian State Agrarian Technical University (2013–2018)",
     education_course: "QA Engineer Course — IT-ACADEMY (2019)",
-
     languages_heading: "Languages",
     lang_russian: "Russian (Native)",
     lang_english: "English (C1)",
     lang_polish: "Polish (A2)",
     lang_german: "German (A1)",
-
     references_heading: "References",
-
     experience_heading: "Professional Experience",
     job1_title: "QA/QC Engineer — Nero Electronics (Unic Lab), Minsk, Belarus",
     job1_dates: "Dec 2024 – Present",
@@ -84,7 +76,6 @@ const translations = {
       "Performed thorough mobile application testing, identifying and documenting critical issues for rapid resolution.",
       "Developed and maintained detailed technical documentation to support developers and end-users alike."
     ],
-
     certificates_heading: "Certificates",
     certificate1: "Selenium Python",
     certificate2: "Python OOP",
@@ -92,12 +83,10 @@ const translations = {
     certificate4: "Python Programming",
     certificate5: "Python Generation",
     certificate6: "Python by Sergei Balakirev",
-
     footer_text: "© 2025 Uladzimir Zadarozhny. All rights reserved."
   },
-
   ru: {
-    page_title: "Владимир Задорожный — Senior QA инженер",
+    page_title: "Владимир Задорожный — Старший QA инженер",
     nav_summary: "Обо мне",
     nav_contacts: "Контакты",
     nav_skills: "Навыки",
@@ -106,20 +95,16 @@ const translations = {
     nav_references: "Рекомендации",
     nav_experience: "Опыт работы",
     nav_certificates: "Сертификаты",
-
     title: "Владимир Задорожный",
     subtitle: "Senior QA инженер (ручное и автоматизированное тестирование)",
-
     email_label: "Почта:",
     phone_label: "Телефон:",
     viber: "Viber",
     telegram: "Telegram",
     linkedin_label: "LinkedIn:",
-
     professional_summary_heading: "Профессиональное резюме",
-    professional_summary_text: 
+    professional_summary_text:
       "Посвятивший себя делу и инновациям <strong>Senior QA Engineer</strong> с 6+ летним опытом как аппаратного, так и программного тестирования в сферах Web, IoT и бытовой электроники. Опыт создания надежных стратегий тестирования, оптимизации процессов и сотрудничества с международными командами для обеспечения высокого качества продуктов.",
-
     core_competencies_heading: "Ключевые компетенции",
     testing_item: "Тестирование: ручное, функциональное, регрессионное и нефункциональное",
     integration_item: "Интеграция: Hardware-Software Integration",
@@ -130,19 +115,15 @@ const translations = {
     databases_item: "Базы данных: MySQL, DBeaver, Postico",
     os_item: "ОС: Linux, macOS, Windows",
     other_item: "Прочее: Git, Bash, CI/CD",
-
     education_heading: "Образование",
     education_bsc: "Бакалавр электротехники — Белорусский государственный аграрно-технический университет (2013–2018)",
     education_course: "Курс QA инженер — IT-ACADEMY (2019)",
-
     languages_heading: "Языки",
     lang_russian: "Русский (родной)",
     lang_english: "Английский (C1)",
     lang_polish: "Польский (A2)",
-    lang_german: "Немецкий (A1)",
-
+    lang_german: "Немецкий (A1)",  
     references_heading: "Рекомендации",
-
     experience_heading: "Опыт работы",
     job1_title: "QA/QC инженер — Nero Electronics (Unic Lab), Минск, Беларусь",
     job1_dates: "Дек 2024 – настоящее время",
@@ -177,9 +158,8 @@ const translations = {
     job5_desc: [
       "Разработка и реализация комплексных сценариев тестирования многофункциональной умной камеры, поддержание высокого уровня качества.",
       "Тщательное тестирование мобильного приложения, выявление и фиксация критических проблем для быстрого устранения.",
-      "Создание и поддержание подробной технической документации для разработчиков и конечных пользователей."
+      "Создание и поддержку подробной технической документации для разработчиков и конечных пользователей."
     ],
-
     certificates_heading: "Сертификаты",
     certificate1: "Selenium Python",
     certificate2: "Python OOP",
@@ -187,7 +167,6 @@ const translations = {
     certificate4: "Python Programming",
     certificate5: "Python Generation",
     certificate6: "Python от Сергея Балакирева",
-
     footer_text: "© 2025 Владимир Задорожный. Все права защищены."
   }
 };
@@ -195,16 +174,14 @@ const translations = {
 function switchLanguage(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (key && translations[lang] && translations[lang][key] != null) {
-      if (Array.isArray(translations[lang][key])) {
-        el.innerHTML = translations[lang][key].map(item => `<li>${item}</li>`).join('');
+    const value = translations[lang][key];
+    if (value != null) {
+      if (Array.isArray(value)) {
+        el.innerHTML = value.map(item => `<li>${item}</li>`).join('');
+      } else if (key === 'professional_summary_text') {
+        el.innerHTML = value;
       } else {
-        // always use innerHTML for summary to preserve <strong>
-        if (key === 'professional_summary_text') {
-          el.innerHTML = translations[lang][key];
-        } else {
-          el.textContent = translations[lang][key];
-        }
+        el.textContent = value;
       }
     }
   });
@@ -213,15 +190,21 @@ function switchLanguage(lang) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const langBtn = document.getElementById('lang-toggle');
-  const saved = localStorage.getItem('siteLang');
-  const lang = saved || 'en';
+  const params = new URLSearchParams(window.location.search);
+  const paramLang = params.get('lang');
+  let lang = (paramLang === 'ru' || paramLang === 'en')
+    ? paramLang
+    : (localStorage.getItem('siteLang') || 'en');
   switchLanguage(lang);
   langBtn.textContent = lang.toUpperCase();
 
   langBtn.addEventListener('click', () => {
-    const current = localStorage.getItem('siteLang') || 'en';
-    const next = current === 'en' ? 'ru' : 'en';
+    const next = (localStorage.getItem('siteLang') === 'en') ? 'ru' : 'en';
     switchLanguage(next);
     langBtn.textContent = next.toUpperCase();
+    // Update URL parameter
+    const newParams = new URLSearchParams(window.location.search);
+    newParams.set('lang', next);
+    history.replaceState(null, '', `${window.location.pathname}?${newParams.toString()}`);
   });
 });
