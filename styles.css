@@ -367,3 +367,21 @@ a:hover { color: #a162f7; }
     opacity: 1 !important;
   }
 }
+
+@supports (-webkit-overflow-scrolling: touch) {
+  header {
+    /* Сброс inline-стилей от JS */
+    top: 0 !important;
+    transform: translateX(-50%) !important;
+    opacity: 1 !important;
+
+    /* Установка исходных свойств фиксации и размера */
+    position: fixed !important;
+    left: 50% !important;
+    width: 1200px !important;
+    max-width: 98vw !important;
+
+    /* Возвращаем плавный переход */
+    transition: transform 0.7s cubic-bezier(0.4,0,0.2,1), opacity 0.7s cubic-bezier(0.4,0,0.2,1) !important;
+  }
+}
