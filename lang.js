@@ -9,6 +9,7 @@ const translations = {
     nav_education: "Education",
     nav_languages: "Languages",
     nav_references: "References",
+    nav_download: "Download CV",
     nav_experience: "Experience",
     nav_certificates: "Certificates",
     title: "Uladzimir Zadarozhny",
@@ -93,6 +94,7 @@ const translations = {
     nav_education: "Образование",
     nav_languages: "Языки",
     nav_references: "Рекомендации",
+    nav_download: "Скачать CV",
     nav_experience: "Опыт работы",
     nav_certificates: "Сертификаты",
     title: "Владимир Задорожный",
@@ -172,6 +174,7 @@ const translations = {
 };
 
 function switchLanguage(lang) {
+  document.documentElement.setAttribute('lang', lang);
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     const value = translations[lang][key];

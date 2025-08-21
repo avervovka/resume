@@ -103,3 +103,27 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const downloadBtn = document.getElementById('download-cv');
+    if (!downloadBtn) return;
+
+    downloadBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const lang = document.documentElement.getAttribute('lang') || 'en';
+        let filePath, fileName;
+        if (lang === 'ru') {
+            filePath = 'cv_uladzimir_zadarozhny_ru.pdf';
+            fileName = 'Владимир_Задорожный_CV.pdf';
+        } else {
+            filePath = 'cv_uladzimir_zadarozhny_en.pdf';
+            fileName = 'Uladzimir_Zadarozhny_CV.pdf';
+        }
+        const link = document.createElement('a');
+        link.href = filePath;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+});
