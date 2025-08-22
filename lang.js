@@ -22,7 +22,7 @@ const translations = {
     professional_summary_heading: "Professional Summary",
     professional_summary_text:
       "Dedicated and innovative <strong>Senior QA Engineer</strong> with 6+ years of expertise in both hardware and software testing, across Web, IoT, and consumer electronics. Skilled at designing bulletproof test strategies, driving process improvements, and collaborating with global teams to ensure outstanding product quality.",
-    core_competencies_heading: "Core Competencies",
+    core_competencies_heading: "Skills",
     testing_item: "Testing: Manual, Functional, Regression & Non-Functional",
     integration_item: "Integration: Hardware-Software Integration",
     api_testing_item: "API Testing: Postman, Swagger",
@@ -80,7 +80,7 @@ const translations = {
       "Performed thorough mobile application testing, identifying and documenting critical issues for rapid resolution.",
       "Developed and maintained detailed technical documentation to support developers and end-users alike."
     ],
-    certificates_heading: "Certificates",
+    certificates_heading: "Courses & Certificates",
     certificate1: "Selenium Python",
     certificate2: "Python OOP",
     certificate3: "HTML & CSS",
