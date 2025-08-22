@@ -114,10 +114,10 @@ document.addEventListener('DOMContentLoaded', function() {
         let filePath, fileName;
         if (lang === 'ru') {
             filePath = 'cv_uladzimir_zadarozhny_ru.pdf';
-            fileName = 'Владимир_Задорожный_CV.pdf';
+            fileName = 'Uladzimir_Zadarozhny_CV_RU_ATS.pdf';
         } else {
             filePath = 'cv_uladzimir_zadarozhny_en.pdf';
-            fileName = 'Uladzimir_Zadarozhny_CV.pdf';
+            fileName = 'Uladzimir_Zadarozhny_CV_EN_ATS.pdf';
         }
         const link = document.createElement('a');
         link.href = filePath;
